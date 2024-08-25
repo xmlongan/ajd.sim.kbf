@@ -34,10 +34,8 @@ ryield_SVJ <- function(n, v0, tau, r, k, theta, sigma, rho,
   mu_s = log(1+mu_bar) - sigma_s^2/2
   Ns = stats::rpois(n, lambda*tau)
   for (i in 1:n) {
-    if (Ns[i] > 0) {
-      # Jsum[i] = sum(exp(stats::rnorm(Ns[i], mu_s, sigma_s)) - 1)
-      Jsum[i] = sum(stats::rnorm(Ns[i], mu_s, sigma_s))
-    }
+    # Jsum[i] = sum(exp(stats::rnorm(Ns[i], mu_s, sigma_s)) - 1)
+    Jsum[i] = sum(stats::rnorm(Ns[i], mu_s, sigma_s))
   }
   # continuous + jump
   return(Y+Jsum)

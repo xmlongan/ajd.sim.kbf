@@ -14,7 +14,14 @@ vector of mean, variance, skewness and kurtosis.
 }
 \description{
 Get the mean, variance, skewness and kurtosis from the first four
-non-central moments.
+non-central moments. It should be noted that
+\itemize{
+\item \eqn{variance > 0,} and
+\item \eqn{kurtosis \le skewness^2 + 1.}
+When either of these two scenarios happen, a error is issued or other
+modifications are conducted. When \eqn{std < 1e^{-5}}, a warning is issued,
+warning that the skewness and kurtosis are highly un-reliable.
+}
 }
 \examples{
 k = 6.21; theta = 0.019; sigma = 0.61; v0 = 0.010201; v1 = v0; tau = 1

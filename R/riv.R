@@ -23,6 +23,7 @@
 #' - when the computed variance is very small, the computed skewness and
 #'   kurtosis are highly un-reliable, therefore, we let `iv` equal the mean
 #'   directly.
+#' Pearson Distribution samples are simulated by [PearsonDS::rpearson()].
 #'
 #' @return scalar
 #' @export

@@ -9,7 +9,9 @@
 #' }
 #' Closely related with the Characteristic Function through
 #' \eqn{\Phi(a) = \mathcal{L}(-ia)}, where \eqn{\Phi(a)} is the Characteristic
-#' Function which is implemented as the function [ajd.sim.bk::CF()].
+#' Function which is implemented as the function [ajd.sim.bk::CF()]. The
+#' involved BesselI function is evaluated by [Bessel::BesselI()] or
+#' [Bessel::besselIasym()].
 #'
 #' @param a Laplace transform input, can be either a real number or a complex
 #' number.

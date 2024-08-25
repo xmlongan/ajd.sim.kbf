@@ -36,7 +36,9 @@ function:
 }
 Closely related with the Characteristic Function through
 \eqn{\Phi(a) = \mathcal{L}(-ia)}, where \eqn{\Phi(a)} is the Characteristic
-Function which is implemented as the function \code{\link[ajd.sim.bk:CF]{ajd.sim.bk::CF()}}.
+Function which is implemented as the function \code{\link[ajd.sim.bk:CF]{ajd.sim.bk::CF()}}. The
+involved BesselI function is evaluated by \code{\link[Bessel:Bessel]{Bessel::BesselI()}} or
+\code{\link[Bessel:besselIasym]{Bessel::besselIasym()}}.
 }
 \examples{
 k = 6.21; theta = 0.019; sigma = 0.61; v0 = 0.010201; v1 = v0; tau = 1
