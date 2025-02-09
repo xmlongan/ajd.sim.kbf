@@ -23,15 +23,19 @@
 #' @examples
 #' S = 100; K = 100; v0 = 0.010201; k = 6.21; theta = 0.019; sigma = 0.61
 #' rho = -0.7; r = 0.0319; tau = 1; true_price = 6.8061
-#' # price_Hest(10000, S, K, v0, tau, r, k, theta, sigma, rho, true_price)
-price_Hest <- function(N, S, K, v0, tau, r, k, theta, sigma, rho,
+#' # price_hest(10000, S, K, v0, tau, r, k, theta, sigma, rho, true_price)
+price_hest <- function(N, S, K, v0, tau, r, k, theta, sigma, rho,
                        true_price) {
-  start.time = Sys.time()
-  Y = ryield_Hest(N, v0, tau, r, k, theta, sigma, rho)
+  # start.time = Sys.time()
+  ts = proc.time()
+  Y = ryield_hest(N, v0, tau, r, k, theta, sigma, rho)
   cprice_MC = exp(-r*tau) * mean(pmax(S*exp(Y)-K, 0))
-  end.time = Sys.time()
-  time.taken = end.time - start.time
+  # end.time = Sys.time()
+  te = proc.time()
+  # time.taken = end.time - start.time
+  tt = te - ts
   error = cprice_MC - true_price
   #
-  return(c(error, as.numeric(time.taken)))
+  # return(c(error, as.numeric(time.taken)))
+  return(c(error, tt[[3]]))
 }

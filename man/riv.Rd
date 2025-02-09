@@ -38,8 +38,9 @@ likely to introduce computational errors, therefore, we let
 \item when the computed variance is very small, the computed skewness and
 kurtosis are highly un-reliable, therefore, we let \code{iv} equal the mean
 directly.
-Pearson Distribution samples are simulated by \code{\link[PearsonDS:Pearson]{PearsonDS::rpearson()}}.
 }
+
+Pearson Distribution samples are simulated by \code{\link[PearsonDS:Pearson]{PearsonDS::rpearson()}}.
 }
 \examples{
 k = 6.21; theta = 0.019; sigma = 0.61; v0 = 0.010201; v1 = v0; tau = 1

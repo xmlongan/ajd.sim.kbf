@@ -22,13 +22,13 @@
 #' @examples
 #' v0 = 0.008836; k = 3.99; theta = 0.014; sigma = 0.27; rho = -0.79
 #' r = 0.0319; tau = 5; lambda = 0.11; mu_bar = -0.12; sigma_s = 0.15
-#' Y = ryield_SVJ(10, v0, tau, r, k, theta, sigma, rho,
+#' Y = ryield_svj(10, v0, tau, r, k, theta, sigma, rho,
 #' lambda, mu_bar, sigma_s)
 #' hist(Y)
-ryield_SVJ <- function(n, v0, tau, r, k, theta, sigma, rho,
+ryield_svj <- function(n, v0, tau, r, k, theta, sigma, rho,
                        lambda, mu_bar, sigma_s) {
   # continuous jump part
-  Y = ryield_Hest(n, v0, tau, r-lambda*mu_bar, k, theta, sigma, rho)
+  Y = ryield_hest(n, v0, tau, r-lambda*mu_bar, k, theta, sigma, rho)
   # jump part
   Jsum = rep(0, n)
   mu_s = log(1+mu_bar) - sigma_s^2/2

@@ -19,9 +19,9 @@
 #' @examples
 #' v0 = 0.010201; k = 6.21; theta = 0.019; sigma = 0.61; rho = -0.7
 #' r = 0.0319; tau = 1
-#' Y = ryield_Hest(10, v0, tau, r, k, theta, sigma, rho)
+#' Y = ryield_hest(10, v0, tau, r, k, theta, sigma, rho)
 #' hist(Y)
-ryield_Hest <- function(n, v0, tau, r, k, theta, sigma, rho) {
+ryield_hest <- function(n, v0, tau, r, k, theta, sigma, rho) {
   Y = rep(0, n)
   for (i in 1:n) {
     v1 = ajd.sim.bk::rv(v0, tau, k, theta, sigma)
